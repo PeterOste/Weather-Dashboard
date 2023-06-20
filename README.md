@@ -5,8 +5,6 @@
 
 ## Screenshot
 
-# Weather Dashboard
-
 ## License
 MIT
 
