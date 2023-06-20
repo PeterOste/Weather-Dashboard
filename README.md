@@ -1,1 +1,4 @@
-# Weather-Dashboard
+# Weather Dashboard
+
+## License
+MIT
