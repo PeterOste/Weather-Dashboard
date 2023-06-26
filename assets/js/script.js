@@ -47,10 +47,10 @@ function handleSearchFormSubmit(event) {
         .catch(function (error) {
             errorMessageEl.textContent = "An error occurred: " + error.message;
         });
+
     currentWeatherEl.classList.remove("hidden");
     forecastSectionEl.classList.remove("hidden");
     searchHistorySectionEl.classList.remove("hidden");
-
-}
+};
 
 searchFormEl.addEventListener("submit", handleSearchFormSubmit);
