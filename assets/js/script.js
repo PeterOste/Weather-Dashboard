@@ -11,6 +11,9 @@ var errorMessageEl = document.getElementById("error-message");
 var currentWeatherEl = document.getElementById("current-weather");
 var forecastSectionEl = document.getElementById("forecast-section");
 var searchHistorySectionEl = document.getElementById("search-history-section");
+var searchHistoryListEl = document.getElementById("search-history-list");
+
+var searchHistory = [];
 
 function handleSearchFormSubmit(event) {
     event.preventDefault();
@@ -46,6 +49,8 @@ function handleSearchFormSubmit(event) {
 
             var currentDate = new Date();
             dateEl.textContent = "Date: " + currentDate.toLocaleDateString();
+
+            addToSearchHistory(data.name);
         })
         .catch(function (error) {
             errorMessageEl.textContent = "An error occurred: " + error.message;
@@ -56,4 +61,20 @@ function handleSearchFormSubmit(event) {
     searchHistorySectionEl.classList.remove("hidden");
 };
 
+function addToSearchHistory(city) {
+    if (!searchHistory.includes(city)) {
+        searchHistory.push(city);
+        var liEl = document.createElement("li");
+        liEl.textContent = city;
+        searchHistoryListEl.appendChild(liEl);
+    }
+}
+
+function handleSearchHistoryClick(event) {
+    var clickedCity = event.target.textContent;
+    cityInputEl.value = clickedCity;
+    handleSearchFormSubmit(event);
+}
+
 searchFormEl.addEventListener("submit", handleSearchFormSubmit);
+searchHistorySectionEl.addEventListener("click", handleSearchHistoryClick);
