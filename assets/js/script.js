@@ -2,7 +2,7 @@ var APIKey = "30be1111837fac08219d0c856c8d8a6d";
 var searchFormEl = document.getElementById("search-form");
 var cityInputEl = document.getElementById("city-input");
 var cityNameEl = document.getElementById("city-name");
-// var dateEl = document.getElementById("date");
+var dateEl = document.getElementById("date");
 var weatherIconEl = document.getElementById("weather-icon");
 var temperatureEl = document.getElementById("temperature");
 var windSpeedEl = document.getElementById("wind-speed");
@@ -43,6 +43,9 @@ function handleSearchFormSubmit(event) {
             var iconCode = data.weather[0].icon;
             var iconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png"
             weatherIconEl.src = iconURL;
+
+            var currentDate = new Date();
+            dateEl.textContent = "Date: " + currentDate.toLocaleDateString();
         })
         .catch(function (error) {
             errorMessageEl.textContent = "An error occurred: " + error.message;
