@@ -18,11 +18,11 @@ function handleSearchFormSubmit(event) {
     var city = cityInputEl.value.trim();
 
     if(!city){
-        errorMessageEl.textContent = "Enter a city name";
+        errorMessageEl.textContent = "Enter a city name!";
         return;
     }
 
-    var queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
+    var queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}&units=imperial`;
 
     fetch(queryURL)
         .then(function (response) {
@@ -33,12 +33,10 @@ function handleSearchFormSubmit(event) {
             }    
         })
         .then(function (data) {
-            // Process retrieved weather data
-            // console.log(data);
 
             cityNameEl.textContent = data.name;
-            temperatureEl.textContent = "Temperature: " + data.main.temp + "°C";
-            windSpeedEl.textContent = "Wind Speed: " + data.wind.speed + " m/s";
+            temperatureEl.textContent = "Temperature: " + data.main.temp + "°F";
+            windSpeedEl.textContent = "Wind Speed: " + data.wind.speed + " mph";
             humidityEl.textContent = "Humidity: " + data.main.humidity + "%";
             errorMessageEl.textContent = "";
 
