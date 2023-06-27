@@ -2,7 +2,6 @@
     display: none;
 }
 
-
 body {
     display: flex;
     flex-direction: column;
@@ -21,6 +20,13 @@ body {
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
+}
+
+#forecast-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
 }
 
 #search-history-section {
