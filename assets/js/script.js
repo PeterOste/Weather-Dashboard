@@ -79,6 +79,7 @@ function handleSearchFormSubmit(event) {
             
                         var forecastDateEl = document.createElement("p");
                         forecastDateEl.textContent = forecastDate.toLocaleDateString();
+                        forecastDateEl.style.fontWeight = "bold";
                         forecastCardEl.appendChild(forecastDateEl);
             
                         var forecastIconEl = document.createElement("img");
