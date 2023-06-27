@@ -113,6 +113,7 @@ function handleSearchFormSubmit(event) {
     currentWeatherEl.classList.remove("hidden");
     forecastSectionEl.classList.remove("hidden");
     searchHistorySectionEl.classList.remove("hidden");
+    searchHistorySectionEl.style.display = "flex";
 
     addToSearchHistory(city);
 }

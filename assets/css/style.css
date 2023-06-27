@@ -34,6 +34,8 @@ body {
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
+    flex-direction: column;
+    align-items: center;
 }
 
 #search-history-list {
@@ -46,8 +48,16 @@ body {
 #search-history-list li {
     padding: 5px;
     cursor: pointer;
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 5px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 #search-history-list li:hover {
-    border: 1px solid #ddd;
+    background-color: #0255d1;
 }
