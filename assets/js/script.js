@@ -15,6 +15,7 @@ var searchHistorySectionEl = document.getElementById("search-history-section");
 var searchHistoryListEl = document.getElementById("search-history-list");
 
 var searchHistory = [];
+loadSearchHistory();
 
 function handleSearchFormSubmit(event) {
     event.preventDefault();
@@ -62,7 +63,7 @@ function handleSearchFormSubmit(event) {
                     }
                 })
                 .then (function (forecastData) {
-                    forecastContainerEl.innerHTML = ""; // Clear previous forecast data
+                    forecastContainerEl.innerHTML = "";
                     console.log(forecastData);
                     for (var i = 0; i < forecastData.list.length; i += 8) {
                         var forecastItem = forecastData.list[i];
@@ -104,7 +105,7 @@ function handleSearchFormSubmit(event) {
                     errorMessageEl.textContent = "An error occurred: " + error.message;
                 });
 
-           // addToSearchHistory(data.name);
+           addToSearchHistory(data.name);
         })
         .catch(function (error) {
             errorMessageEl.textContent = "An error occurred: " + error.message;
@@ -124,6 +125,21 @@ function addToSearchHistory(city) {
         var liEl = document.createElement("li");
         liEl.textContent = city;
         searchHistoryListEl.appendChild(liEl);
+
+        localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+    }
+}
+
+function loadSearchHistory() {
+    var storedSearchHistory = localStorage.getItem("searchHistory");
+    if (storedSearchHistory) {
+        searchHistory = JSON.parse(storedSearchHistory);
+
+        searchHistory.forEach(function (city) {
+            var liEl = document.createElement("li");
+            liEl.textContent = city;
+            searchHistoryListEl.appendChild(liEl);
+        });
     }
 }
 
