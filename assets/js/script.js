@@ -51,7 +51,7 @@ function handleSearchFormSubmit(event) {
             var currentDate = new Date();
             dateEl.textContent = "Date: " + currentDate.toLocaleDateString();
 
-            var forecastURL = 'https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}&units=imperial'; // forest instead of weather
+            var forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey}&units=imperial`;
 
             fetch(forecastURL)
                 .then(function (response) {
