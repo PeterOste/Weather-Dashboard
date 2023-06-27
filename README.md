@@ -22,7 +22,7 @@ https://peteroste.github.io/Weather-Dashboard/
 ![Capture](https://github.com/PeterOste/Weather-Dashboard/assets/131497563/db391233-6c87-4195-bbc1-46186fb67e79)
 
 ## Credits
-This weather dashboard application was developed by myself, Peter Ostertag. I referred to the OpenWeatherMap documentation for API calls and I also had to review a lot of the Bootstrap documentation as well.
+This weather dashboard application was developed by myself, Peter Ostertag. I referred to the OpenWeatherMap documentation for API calls and I also had to review the Bootstrap documentation as well.
 
 ## License
 MIT
