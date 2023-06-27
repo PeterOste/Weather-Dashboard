@@ -11,22 +11,22 @@
 
 <body>
     <header class="text-center py-4 bg-light">
-        <h1>Weather Report</h1>
+        <h1 class="fw-bold">Weather Report</h1>
     </header>
 
     <main class="container mt-4 flex-grow-1">
         <section id="search-section" class="mb-4">
             <form id="search-form" class="d-flex">
                 <input type ="text" id="city-input" class="form-control me-2" placeholder="Enter a city name...">
-                <button type="submit">Search</button>
+                <button type="submit" class="btn btn-primary">Search</button>
             </form>
             <p id="error-message" class="text-center"></p>
         </section>
 
         <section id="current-weather" class="hidden text-center">
-            <h2>Current Weather</h2>
+            <h2 class="fw-bold">Current Weather</h2>
             <div>
-                <h3 id="city-name"></h3>
+                <h3 id="city-name" class="text-decoration-underline"></h3>
                 <p id="date"></p>
                 <img id="weather-icon" src="" alt="Weather Icon">
                 <p id="temperature"></p>
@@ -36,14 +36,13 @@
         </section>
 
         <section id="forecast-section" class="hidden text-center">
-            <h2>5-Day Forecast</h2>
+            <h2 class="fw-bold">5-Day Forecast</h2>
             <div id="forecast-container"></div>
         </section>
 
         <section id="search-history-section" class="hidden text-center">
-            <h2>Search History</h2>
+            <h2 class="fw-bold">Search History</h2>
             <ul id="search-history-list" class="list-group">
-                <!-- Need to dynamically add history here -->
             </ul>
         </section>
     </main>

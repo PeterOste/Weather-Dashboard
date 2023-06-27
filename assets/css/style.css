@@ -8,3 +8,40 @@ body {
     flex-direction: column;
      min-height: 100vh;
 }
+
+#current-weather {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#forecast-section {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#search-history-section {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#search-history-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+#search-history-list li {
+    padding: 5px;
+    cursor: pointer;
+}
+
+#search-history-list li:hover {
+    border: 1px solid #ddd;
+}
